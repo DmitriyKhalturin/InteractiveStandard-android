@@ -8,7 +8,6 @@ android {
 }
 
 dependencies {
-    implementation(Dependence.Android.Core.core)
-
     implementation(Dependence.Kotlin.Coroutine.android)
+    implementation(Dependence.Android.Core.core)
 }

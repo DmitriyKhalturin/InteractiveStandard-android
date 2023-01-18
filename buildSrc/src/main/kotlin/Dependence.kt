@@ -50,6 +50,7 @@ object Dependence {
         object Lifecycle {
             private const val version = "2.5.1"
 
+            const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
             const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
             const val viewmodelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
         }

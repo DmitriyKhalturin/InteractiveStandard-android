@@ -1,4 +1,4 @@
-package com.interactivestandard.domain
+package com.interactivestandard.domain.model
 
 data class Point(
     val x: Double,
