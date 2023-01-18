@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
 }
 
+@Suppress("UnstableApiUsage")
 android {
     namespace = "${Version.Android.bundleId}.android"
 
@@ -40,9 +41,9 @@ dependencies {
 
     implementation(Dependence.Android.Compose.activity)
 
-    implementation(Dependence.Android.Compose.ui)
-    debugImplementation(Dependence.Android.Compose.tooling)
-    implementation(Dependence.Android.Compose.toolingPreview)
-    implementation(Dependence.Android.Compose.foundation)
-    implementation(Dependence.Android.Compose.material)
+    implementation(Dependence.Compose.ui)
+    debugImplementation(Dependence.Compose.tooling)
+    implementation(Dependence.Compose.toolingPreview)
+    implementation(Dependence.Compose.foundation)
+    implementation(Dependence.Compose.material)
 }
