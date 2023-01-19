@@ -20,12 +20,14 @@ class ApiClient {
 
     val instance: HttpClient
         get() {
-            return reference.get() ?: synchronized(this) {
-                reference.get() ?: run {
-                    val newInstance = createInstance()
-                    reference.set(newInstance)
-                    newInstance
-                }
+            while (true) {
+                val oldInstance = reference.get()
+
+                if (oldInstance != null) return oldInstance
+
+                val newInstance = createInstance()
+
+                if (reference.compareAndSet(null, newInstance)) return newInstance
             }
         }
 
