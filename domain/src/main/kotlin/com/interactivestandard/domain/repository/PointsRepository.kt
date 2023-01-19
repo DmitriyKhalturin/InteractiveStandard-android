@@ -7,5 +7,5 @@ import com.interactivestandard.domain.model.Point
  * for InteractiveStandard on 18.01.2023 19:42.
  */
 interface PointsRepository {
-    suspend fun getPoints(count: Int): List<Point>
+    suspend fun getPoints(count: Int? = null): List<Point>
 }
