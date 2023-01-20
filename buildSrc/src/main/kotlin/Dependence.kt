@@ -50,8 +50,8 @@ object Dependence {
         object Lifecycle {
             private const val version = "2.5.1"
 
-            const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
             const val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
+            const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
             const val viewmodelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
         }
 
@@ -62,10 +62,10 @@ object Dependence {
     }
 
     object Koin {
-        private const val coreVersion = "3.2.2"
-        private const val androidVersion = "3.3.0"
-        private const val composeVersion = "3.3.0"
-        private const val ktorVersion = "3.2.2"
+        private const val coreVersion = "3.3.2"
+        private const val androidVersion = "3.3.2"
+        private const val composeVersion = "3.4.1"
+        private const val ktorVersion = "3.3.0"
 
         const val core = "io.insert-koin:koin-core:$coreVersion"
         const val android = "io.insert-koin:koin-android:$androidVersion"

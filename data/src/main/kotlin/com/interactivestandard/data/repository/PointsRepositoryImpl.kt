@@ -1,6 +1,6 @@
 package com.interactivestandard.data.repository
 
-import com.interactivestandard.data.api.service.PointsApiService
+import com.interactivestandard.data.api.ApiClient
 import com.interactivestandard.domain.model.Point
 import com.interactivestandard.domain.repository.PointsRepository
 
@@ -9,11 +9,11 @@ import com.interactivestandard.domain.repository.PointsRepository
  * for InteractiveStandard on 18.01.2023 22:38.
  */
 class PointsRepositoryImpl(
-    private val pointsApiService: PointsApiService,
+    private val apiClient: ApiClient,
 ) : PointsRepository {
 
     override suspend fun getPoints(count: Int?): List<Point> {
-        return pointsApiService.getPoints(count)
+        return apiClient.pointService.getPoints(count)
             .map { Point(it.x, it.y) }
     }
 }

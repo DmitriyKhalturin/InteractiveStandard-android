@@ -46,4 +46,11 @@ dependencies {
     implementation(Dependence.Compose.toolingPreview)
     implementation(Dependence.Compose.foundation)
     implementation(Dependence.Compose.material)
+
+    implementation(Dependence.Koin.core)
+    implementation(Dependence.Koin.android)
+    implementation(Dependence.Koin.compose)
+
+    implementation(project(":data"))
+    implementation(project(":domain"))
 }

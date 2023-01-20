@@ -1,5 +1,6 @@
 package com.interactivestandard.data.api
 
+import com.interactivestandard.data.api.service.PointService
 import io.ktor.client.*
 import io.ktor.client.engine.okhttp.*
 import io.ktor.client.plugins.*
@@ -18,7 +19,7 @@ class ApiClient {
 
     private var reference: AtomicReference<HttpClient?> = AtomicReference()
 
-    val instance: HttpClient
+    internal val instance: HttpClient
         get() {
             while (true) {
                 val oldInstance = reference.get()
@@ -62,4 +63,7 @@ class ApiClient {
             reference.compareAndSet(oldInstance, null)
         }
     }
+
+    val pointService
+        get() = PointService(this)
 }

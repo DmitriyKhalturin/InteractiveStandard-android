@@ -15,10 +15,10 @@ class GetPointsUseCase(
 
     private var count by Delegates.notNull<Int>()
 
-    suspend fun invoke(count: Int) {
+    suspend operator fun invoke(count: Int): UseCaseResult<List<Point>> {
         this.count = count
 
-        invoke()
+        return invoke()
     }
 
     override suspend fun factory(): UseCaseResult<List<Point>> {

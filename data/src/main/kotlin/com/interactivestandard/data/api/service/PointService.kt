@@ -10,7 +10,7 @@ import io.ktor.client.request.*
  * Created by Dmitriy Khalturin <dmitry.halturin.86@gmail.com>
  * for InteractiveStandard on 18.01.2023 23:49.
  */
-class PointsApiService(
+class PointService(
     private val apiClient: ApiClient,
 ) {
 
