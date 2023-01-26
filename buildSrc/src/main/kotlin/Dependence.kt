@@ -87,6 +87,19 @@ object Dependence {
         const val logging = "io.ktor:ktor-client-logging:$version"
     }
 
+    object Log4j {
+        private const val version = "2.17.2"
+
+        const val core = "org.apache.logging.log4j:log4j-core:$version"
+        const val impl = "org.apache.logging.log4j:log4j-slf4j-impl:$version"
+    }
+
+    object Logback {
+        private const val version = "1.4.5"
+
+        const val classic = "ch.qos.logback:logback-classic:$version"
+    }
+
     object SQLDelight {
         private const val version = "1.5.3"
         const val gradlePlugin = "com.squareup.sqldelight:gradle-plugin:$version"

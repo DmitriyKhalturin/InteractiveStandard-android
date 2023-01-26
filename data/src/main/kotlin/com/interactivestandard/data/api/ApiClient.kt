@@ -49,7 +49,7 @@ class ApiClient {
             defaultRequest {
                 url {
                     protocol = URLProtocol.HTTP
-                    host = "localhost"
+                    host = "10.0.2.2:8080" // TODO: move value to constant.
                 }
             }
         }

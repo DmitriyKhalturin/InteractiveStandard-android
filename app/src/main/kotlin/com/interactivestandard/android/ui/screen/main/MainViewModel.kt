@@ -36,12 +36,22 @@ class MainViewModel : BaseViewModel<MainViewState>(), KoinComponent {
             uiState = if (count != null) {
                 when (val result = getPointsUseCase(count)) {
                     is UseCase.UseCaseResult.Successful -> uiState.copy(points = result.data)
-                    else -> uiState.copy(error = MainViewState.ErrorState.RequestGerPointsFailed)
+                    is UseCase.UseCaseResult.Failed -> result.handleGetPointsRequest()
+                    else -> uiState
                 }
             } else {
                 uiState.copy(error = MainViewState.ErrorState.EnterInvalidCountValue)
             }
         }
+    }
+
+    private fun UseCase.UseCaseResult.Failed.handleGetPointsRequest(): MainViewState {
+        onExceptionHandler(exception)
+
+        return uiState.copy(
+            points = emptyList(),
+            error = MainViewState.ErrorState.RequestGerPointsFailed,
+        )
     }
 
     fun clearErrorFlag() {

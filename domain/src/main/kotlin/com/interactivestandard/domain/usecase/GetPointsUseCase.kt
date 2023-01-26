@@ -23,6 +23,7 @@ class GetPointsUseCase(
 
     override suspend fun factory(): UseCaseResult<List<Point>> {
         val points = pointsRepository.getPoints(count)
+            .sortedBy { it.x }
 
         return successfulResult(points)
     }

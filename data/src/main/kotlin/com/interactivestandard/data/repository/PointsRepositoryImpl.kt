@@ -13,7 +13,8 @@ class PointsRepositoryImpl(
 ) : PointsRepository {
 
     override suspend fun getPoints(count: Int?): List<Point> {
-        return apiClient.pointService.getPoints(count)
-            .map { Point(it.x, it.y) }
+        val points = apiClient.pointService.getPoints(count)
+
+        return points.map { Point(it.x, it.y) }
     }
 }
