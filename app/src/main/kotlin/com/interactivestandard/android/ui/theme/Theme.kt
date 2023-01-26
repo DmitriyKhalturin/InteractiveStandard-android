@@ -14,7 +14,7 @@ import androidx.core.view.WindowCompat
 @Composable
 fun InteractiveStandardTheme(
     inDarkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = if (inDarkTheme) darkColors() else lightColors()
     val view = LocalView.current

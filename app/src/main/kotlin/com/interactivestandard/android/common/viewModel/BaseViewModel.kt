@@ -4,7 +4,22 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
 
-open class BaseViewModel : ViewModel() {
+abstract class BaseViewModel<VS: ViewState> : ViewModel() {
+
+    abstract var uiState: VS
+        protected set
+
+    @JvmName("updateUiState")
+    fun setUiState(value: VS) {
+        uiState = value
+    }
+
+    protected inline fun <reified VS> castViewState(block: (VS) -> Unit) {
+        val currentViewState = uiState
+
+        if (currentViewState is VS) block(currentViewState) else throw IllegalViewStateException(currentViewState)
+    }
+
 
     private val supervisor = SupervisorJob()
 

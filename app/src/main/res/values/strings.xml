@@ -1,3 +1,13 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="ru">
     <string name="app_name">InteractiveStandard</string>
+
+    <string name="fieldLabel__count">Количество точек</string>
+    <string name="fieldError__wrongPointsCount">Неверное значение</string>
+    <string name="button__renderChart">Отрисовать график</string>
+    <string name="errorMessage__requestGetPointsFailed">Не удалось загрузить данные</string>
+
+    <string name="pointsTable_emptyList">Нет значений для отображения</string>
+    <string name="pointsTable_indexColumn">№</string>
+    <string name="pointsTable_xColumn">x</string>
+    <string name="pointsTable_yColumn">y</string>
 </resources>

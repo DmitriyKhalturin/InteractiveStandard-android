@@ -1,6 +1,6 @@
 package com.interactivestandard.android.di
 
-import com.interactivestandard.android.ui.screen.MainViewModel
+import com.interactivestandard.android.ui.screen.main.MainViewModel
 import com.interactivestandard.data.api.ApiClient
 import com.interactivestandard.data.repository.PointsRepositoryImpl
 import com.interactivestandard.domain.repository.PointsRepository

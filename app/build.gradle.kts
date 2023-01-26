@@ -51,6 +51,8 @@ dependencies {
     implementation(Dependence.Koin.android)
     implementation(Dependence.Koin.compose)
 
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
     implementation(project(":data"))
     implementation(project(":domain"))
 }
