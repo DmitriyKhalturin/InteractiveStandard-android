@@ -1,5 +1,7 @@
 package com.interactivestandard.data.api
 
+import android.content.Context
+import com.interactivestandard.data.R
 import com.interactivestandard.data.api.service.PointService
 import io.ktor.client.*
 import io.ktor.client.engine.okhttp.*
@@ -15,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference
  * Created by Dmitriy Khalturin <dmitry.halturin.86@gmail.com>
  * for InteractiveStandard on 18.01.2023 22:22.
  */
-class ApiClient {
+class ApiClient(private val context: Context) {
 
     private var reference: AtomicReference<HttpClient?> = AtomicReference()
 
@@ -49,7 +51,7 @@ class ApiClient {
             defaultRequest {
                 url {
                     protocol = URLProtocol.HTTP
-                    host = "10.0.2.2:8080" // TODO: move value to constant.
+                    host = context.getString(R.string.apiBaseUrl)
                 }
             }
         }
