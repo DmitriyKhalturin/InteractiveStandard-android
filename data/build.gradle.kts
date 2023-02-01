@@ -4,8 +4,10 @@ plugins {
     kotlin("plugin.serialization")
 }
 
+val bundleId: String by project
+
 android {
-    namespace = "${Version.Android.bundleId}.data"
+    namespace = "$bundleId.data"
 }
 
 dependencies {

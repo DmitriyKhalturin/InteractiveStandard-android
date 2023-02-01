@@ -3,12 +3,14 @@ plugins {
     kotlin("android")
 }
 
+val bundleId: String by project
+
 @Suppress("UnstableApiUsage")
 android {
-    namespace = "${Version.Android.bundleId}.android"
+    namespace = "$bundleId.android"
 
     defaultConfig {
-        applicationId = "${Version.Android.bundleId}.android"
+        applicationId = "$bundleId.android"
 
         vectorDrawables {
             useSupportLibrary = true

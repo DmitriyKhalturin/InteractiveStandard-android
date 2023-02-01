@@ -30,7 +30,6 @@ subprojects {
 
     afterEvaluate {
         val android = properties["android"]
-        val dependencies = properties["dependencies"]
 
         (android as? com.android.build.gradle.BaseExtension)?.apply {
             val isApplicationModule = android is com.android.build.gradle.AppExtension
@@ -67,8 +66,10 @@ subprojects {
                 targetCompatibility = JavaVersion.VERSION_1_8
             }
 
+            val dependencies = properties["dependencies"]
+
             (dependencies as DependencyHandler).apply {
-                add("coreLibraryDesugaring", "com.android.tools:desugar_jdk_libs:${Version.desugarJdk}")
+                add(Dependence.Android.CoreDesugaring.congigurationName, Dependence.Android.CoreDesugaring.dependencyNotation)
             }
         }
     }
