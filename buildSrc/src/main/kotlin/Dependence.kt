@@ -22,20 +22,33 @@ object Dependence {
         }
     }
 
+    /**
+     * Use Material 2. Read for migration to Material 3 (https://developer.android.com/jetpack/compose/designsystems/material2-material3).
+     */
     object Compose {
         const val gradlePlugin = "org.jetbrains.compose:compose-gradle-plugin:${Version.compose}"
 
         private const val version = Version.compose
+        private const val navigationVersion = "2.5.3"
+
         const val ui = "androidx.compose.ui:ui:$version"
         const val tooling = "androidx.compose.ui:ui-tooling:$version"
         const val toolingPreview = "androidx.compose.ui:ui-tooling-preview:$version"
         const val foundation = "androidx.compose.foundation:foundation:$version"
         const val material = "androidx.compose.material:material:$version"
         const val icons = "androidx.compose.material:material-icons-core:$version"
+        const val navigation = "androidx.navigation:navigation-compose:"
     }
 
     object Android {
         const val gradlePlugin = "com.android.tools.build:gradle:${Version.gradle}"
+        const val desugaringJdk = "com.android.tools:desugar_jdk_libs:1.1.5"
+
+        object CoreDesugaring {
+            private const val version = "1.1.5"
+            const val congigurationName = "coreLibraryDesugaring"
+            const val dependencyNotation = "com.android.tools:desugar_jdk_libs:$version"
+        }
 
         object Core {
             private const val coreVersion = "1.9.0"
