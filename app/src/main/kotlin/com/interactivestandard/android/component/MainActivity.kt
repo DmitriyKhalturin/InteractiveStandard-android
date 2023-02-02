@@ -9,7 +9,9 @@ import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.interactivestandard.android.ui.navigation.MainNavigationGraph
+import com.interactivestandard.android.ui.navigation.NavigationService
 import com.interactivestandard.android.ui.theme.InteractiveStandardTheme
+import org.koin.android.ext.android.inject
 
 /**
  * Created by Dmitriy Khalturin <dmitry.halturin.86@gmail.com>
@@ -17,11 +19,15 @@ import com.interactivestandard.android.ui.theme.InteractiveStandardTheme
  */
 class MainActivity : ComponentActivity() {
 
+    private val navigationService: NavigationService by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
             val navigationController = rememberNavController()
+
+            navigationService.inject(navigationController)
 
             InteractiveStandardTheme {
                 Scaffold(

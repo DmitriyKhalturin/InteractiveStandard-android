@@ -28,11 +28,15 @@ class RenderPointsViewModel(savedStateHandle: SavedStateHandle) : BaseViewModel<
     fun requestPoints() {
         if (uiState !is RenderPointsViewState.PointsLoading) {
             viewModelScope.launch {
-                uiState = when (val result = getPointsUseCase(count)) {
+                val result = getPointsUseCase(count)
+
+                uiState = when (result) {
                     is UseCase.UseCaseResult.Suspended -> RenderPointsViewState.PointsLoading
                     is UseCase.UseCaseResult.Successful -> RenderPointsViewState.Points(points = result.data)
                     is UseCase.UseCaseResult.Failed -> RenderPointsViewState.OperationFailed
                 }
+
+                result.handleException()
             }
         }
     }

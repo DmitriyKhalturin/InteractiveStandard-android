@@ -1,5 +1,6 @@
 package com.interactivestandard.android.di
 
+import com.interactivestandard.android.ui.navigation.NavigationService
 import com.interactivestandard.android.ui.screen.renderPoints.RenderPointsViewModel
 import com.interactivestandard.android.ui.screen.requestCount.RequestCountViewModel
 import com.interactivestandard.data.api.ApiClient
@@ -20,6 +21,7 @@ import org.koin.dsl.module
 val koinModule by lazy {
     module {
         singleOf(::ApiClient)
+        singleOf(::NavigationService)
 
         factoryOf(::PointsRepositoryImpl) { bind<PointsRepository>() }
         factoryOf(::GetPointsUseCase)

@@ -2,6 +2,7 @@ package com.interactivestandard.android.common.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.interactivestandard.domain.usecase.base.UseCase
 import kotlinx.coroutines.*
 
 abstract class BaseViewModel<VS: ViewState> : ViewModel() {
@@ -29,6 +30,12 @@ abstract class BaseViewModel<VS: ViewState> : ViewModel() {
 
     open fun onExceptionHandler(e: Throwable) {
         e.printStackTrace()
+    }
+
+    fun UseCase.UseCaseResult<*>.handleException() {
+        if (this is UseCase.UseCaseResult.Failed) {
+            onExceptionHandler(this.exception)
+        }
     }
 
     private val coroutineContext = (supervisor + exceptionHandler)

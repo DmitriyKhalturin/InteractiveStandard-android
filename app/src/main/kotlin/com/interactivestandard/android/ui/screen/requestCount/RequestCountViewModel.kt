@@ -4,14 +4,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.interactivestandard.android.common.viewModel.BaseViewModel
+import com.interactivestandard.android.ui.navigation.NavigationService
 import com.interactivestandard.android.ui.navigation.destination.RenderPointsDestination
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 /**
  * Created by Dmitriy Khalturin <dmitry.halturin.86@gmail.com>
  * for InteractiveStandard on 02.02.2023 2:35.
  */
 class RequestCountViewModel : BaseViewModel<RequestCountViewState>(), KoinComponent {
+
+    private val navigationService: NavigationService by inject()
 
     override var uiState by mutableStateOf(RequestCountViewState())
 
@@ -30,7 +34,7 @@ class RequestCountViewModel : BaseViewModel<RequestCountViewState>(), KoinCompon
         } else {
             val destination = RenderPointsDestination.buildDestinationRoute(count)
 
-            //
+            navigationService.navigate(destination)
         }
     }
 }
