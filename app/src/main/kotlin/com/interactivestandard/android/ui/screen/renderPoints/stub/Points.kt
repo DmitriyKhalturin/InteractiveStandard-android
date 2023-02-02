@@ -1,4 +1,4 @@
-package com.interactivestandard.android.ui.screen.main.stub
+package com.interactivestandard.android.ui.screen.renderPoints.stub
 
 import com.interactivestandard.domain.model.Point
 

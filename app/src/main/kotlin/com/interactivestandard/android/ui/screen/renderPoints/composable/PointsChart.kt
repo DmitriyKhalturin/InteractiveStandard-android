@@ -1,4 +1,4 @@
-package com.interactivestandard.android.ui.screen.main.composable
+package com.interactivestandard.android.ui.screen.renderPoints.composable
 
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -11,8 +11,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.github.mikephil.charting.charts.LineChart
-import com.interactivestandard.android.ui.screen.main.model.toLineDataSet
-import com.interactivestandard.android.ui.screen.main.stub.stubPoints
+import com.interactivestandard.android.ui.screen.renderPoints.model.toLineDataSet
+import com.interactivestandard.android.ui.screen.renderPoints.stub.stubPoints
 import com.interactivestandard.android.ui.theme.InteractiveStandardTheme
 import com.interactivestandard.domain.model.Point
 
@@ -50,7 +50,7 @@ fun PointsChart(
 
 @Preview(showSystemUi = false, showBackground = true)
 @Composable
-private fun PointsChartPreview() {
+private fun PointsChart_Preview() {
     InteractiveStandardTheme {
         Column(
             modifier = Modifier

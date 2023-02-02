@@ -2,6 +2,8 @@ package com.interactivestandard.android.component
 
 import android.app.Application
 import com.interactivestandard.android.di.koinModule
+import com.interactivestandard.data.api.ApiClient
+import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -12,6 +14,8 @@ import org.koin.core.logger.Level
  * for InteractiveStandard on 18.01.2023 23:51.
  */
 class MainApplication : Application() {
+
+    private val apiClient: ApiClient by inject()
 
     override fun onCreate() {
         super.onCreate()
@@ -28,5 +32,7 @@ class MainApplication : Application() {
         super.onLowMemory()
 
         // TODO: clear resources here.
+
+        apiClient.destroyInstance()
     }
 }

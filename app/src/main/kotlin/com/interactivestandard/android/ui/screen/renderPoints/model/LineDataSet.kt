@@ -1,4 +1,4 @@
-package com.interactivestandard.android.ui.screen.main.model
+package com.interactivestandard.android.ui.screen.renderPoints.model
 
 import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.Entry

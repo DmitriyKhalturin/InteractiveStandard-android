@@ -48,6 +48,8 @@ dependencies {
     implementation(Dependence.Compose.toolingPreview)
     implementation(Dependence.Compose.foundation)
     implementation(Dependence.Compose.material)
+    implementation(Dependence.Compose.icons)
+    implementation(Dependence.Compose.navigation)
 
     implementation(Dependence.Koin.core)
     implementation(Dependence.Koin.android)

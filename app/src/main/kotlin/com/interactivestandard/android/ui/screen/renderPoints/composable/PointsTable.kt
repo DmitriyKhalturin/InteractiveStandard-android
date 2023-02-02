@@ -1,4 +1,4 @@
-package com.interactivestandard.android.ui.screen.main.composable
+package com.interactivestandard.android.ui.screen.renderPoints.composable
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -13,7 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.interactivestandard.android.R
-import com.interactivestandard.android.ui.screen.main.stub.stubPoints
+import com.interactivestandard.android.ui.screen.renderPoints.stub.stubPoints
 import com.interactivestandard.android.ui.theme.InteractiveStandardTheme
 import com.interactivestandard.domain.model.Point
 
@@ -32,7 +32,7 @@ fun PointsTable(
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(text = stringResource(id = R.string.pointsTable_emptyList))
+                Text(text = stringResource(id = R.string.pointsTable_noPoints))
             }
         } else {
             TableItem(
@@ -47,9 +47,9 @@ fun PointsTable(
             ) {
                 itemsIndexed(points) { index, item ->
                     TableItem(
-                        index = "$index",
-                        x = "${item.x}",
-                        y = "${item.y}",
+                        index = index.toString(),
+                        x = item.x.toString(),
+                        y = item.y.toString(),
                     )
                 }
             }

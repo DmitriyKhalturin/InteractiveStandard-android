@@ -1,6 +1,7 @@
 package com.interactivestandard.android.di
 
-import com.interactivestandard.android.ui.screen.main.MainViewModel
+import com.interactivestandard.android.ui.screen.renderPoints.RenderPointsViewModel
+import com.interactivestandard.android.ui.screen.requestCount.RequestCountViewModel
 import com.interactivestandard.data.api.ApiClient
 import com.interactivestandard.data.repository.PointsRepositoryImpl
 import com.interactivestandard.domain.repository.PointsRepository
@@ -18,9 +19,12 @@ import org.koin.dsl.module
 
 val koinModule by lazy {
     module {
-        viewModelOf(::MainViewModel)
         singleOf(::ApiClient)
+
         factoryOf(::PointsRepositoryImpl) { bind<PointsRepository>() }
         factoryOf(::GetPointsUseCase)
+
+        viewModelOf(::RequestCountViewModel)
+        viewModelOf(::RenderPointsViewModel)
     }
 }

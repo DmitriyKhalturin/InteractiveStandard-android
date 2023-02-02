@@ -4,10 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
-import com.interactivestandard.android.ui.screen.main.MainScreen
+import androidx.navigation.compose.rememberNavController
+import com.interactivestandard.android.ui.navigation.MainNavigationGraph
 import com.interactivestandard.android.ui.theme.InteractiveStandardTheme
 
 /**
@@ -20,12 +21,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
+            val navigationController = rememberNavController()
+
             InteractiveStandardTheme {
-                Surface(
+                Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background,
-                ) {
-                    MainScreen()
+                    // TODO: add topBar
+                ) { innerPadding ->
+                    MainNavigationGraph(
+                        modifier = Modifier.padding(innerPadding),
+                        navigationController = navigationController,
+                    )
                 }
             }
         }
