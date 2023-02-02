@@ -27,6 +27,8 @@ class RenderPointsViewModel(savedStateHandle: SavedStateHandle) : BaseViewModel<
 
     fun requestPoints() {
         if (uiState !is RenderPointsViewState.PointsLoading) {
+            uiState = RenderPointsViewState.PointsLoading
+
             viewModelScope.launch {
                 val result = getPointsUseCase(count)
 
