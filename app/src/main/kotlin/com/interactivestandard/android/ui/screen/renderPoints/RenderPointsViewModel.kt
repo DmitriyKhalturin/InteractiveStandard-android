@@ -25,6 +25,10 @@ class RenderPointsViewModel(savedStateHandle: SavedStateHandle) : BaseViewModel<
 
     override var uiState by mutableStateOf<RenderPointsViewState>(RenderPointsViewState.Init)
 
+    init {
+        requestPoints()
+    }
+
     fun requestPoints() {
         if (uiState !is RenderPointsViewState.PointsLoading) {
             uiState = RenderPointsViewState.PointsLoading

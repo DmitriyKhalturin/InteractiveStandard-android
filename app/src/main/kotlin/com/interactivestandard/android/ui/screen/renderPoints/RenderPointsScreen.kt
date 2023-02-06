@@ -6,7 +6,6 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Warning
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -28,9 +27,11 @@ import org.koin.androidx.compose.koinViewModel
  */
 @Composable
 fun RenderPointsScreen(viewModel: RenderPointsViewModel = koinViewModel()) {
-    LaunchedEffect(viewModel) {
-        viewModel.requestPoints()
-    }
+    /** It worked before. But not now.
+     * LaunchedEffect(viewModel) {
+     *     viewModel.requestPoints()
+     * }
+     */
 
     when (val uiState = viewModel.uiState) {
         RenderPointsViewState.Init -> Unit

@@ -47,7 +47,7 @@ fun PointsTable(
             ) {
                 itemsIndexed(points) { index, item ->
                     TableItem(
-                        index = index.toString(),
+                        index = (index + 1).toString(),
                         x = item.x.toString(),
                         y = item.y.toString(),
                     )
