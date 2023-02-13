@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    kotlin("android")
+    id("greeting")
 }
 
 val bundleId: String by project
