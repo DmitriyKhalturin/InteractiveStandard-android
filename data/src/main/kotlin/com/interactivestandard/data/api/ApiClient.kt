@@ -46,6 +46,7 @@ class ApiClient(private val context: Context) {
 
             install(Logging) {
                 level = LogLevel.ALL
+                logger = Logger.SIMPLE
             }
 
             defaultRequest {
