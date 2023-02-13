@@ -21,6 +21,9 @@ dependencies {
     implementation(Dependence.Ktor.serialization)
     implementation(Dependence.Ktor.logging)
 
+    implementation(Dependence.Slf4j.api)
+    implementation(Dependence.Slf4j.simple)
+
     implementation(Dependence.Kotlin.Serialization.json)
 
     implementation(project(":domain"))
