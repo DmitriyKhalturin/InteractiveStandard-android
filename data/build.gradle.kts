@@ -1,10 +1,10 @@
+import GreetingConfig.Companion.bundleId
+
 plugins {
     id("com.android.library")
     id("greeting")
     kotlin("plugin.serialization")
 }
-
-val bundleId: String by project
 
 android {
     namespace = "$bundleId.data"

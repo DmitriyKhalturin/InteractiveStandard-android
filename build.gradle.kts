@@ -1,3 +1,17 @@
+plugins {
+    id("greetingConfig")
+}
+
+greetingConfig {
+    compileSdk = 33
+    minSdk = 24
+
+    bundleId = "com.interactivestandard"
+
+    versionCode = 1
+    versionName = "1.0"
+}
+
 buildscript {
     repositories {
         google()

@@ -1,9 +1,9 @@
+import GreetingConfig.Companion.bundleId
+
 plugins {
     id("com.android.application")
     id("greeting")
 }
-
-val bundleId: String by project
 
 @Suppress("UnstableApiUsage")
 android {
